@@ -19,9 +19,12 @@ public class Enemy : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+
+    	Spawnner spawnnerScript = GameObject.FindGameObjectWithTag("Spawnner")
+        	.GetComponent<Spawnner>(); // note - Spawnner here is name of the script
         
         // used to select random value in the range (maxSpeed not inc)
-        speed = Random.Range(minSpeed, maxSpeed);
+        speed = Random.Range(minSpeed, maxSpeed) + spawnnerScript.getAddedSpeed();
 
         playerScript = GameObject.FindGameObjectWithTag("Player")
         	.GetComponent<Player>(); // note - Player here is name of the script

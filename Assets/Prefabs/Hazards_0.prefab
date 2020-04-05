@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4397844510619741598}
   - component: {fileID: 6501459331021912784}
   - component: {fileID: 4900180238676369973}
+  - component: {fileID: 7428985661798890327}
   m_Layer: 0
   m_Name: Hazards_0
   m_TagString: Untagged
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpeed: 150
   maxSpeed: 160
+  acceleration: 10
   damageGiven: 20
   explosion: {fileID: 3507169540852254642, guid: 2b1266bc771bbca49b6f22cafa4a578a,
     type: 3}
@@ -127,3 +129,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8137517, y: 5.602108}
   m_EdgeRadius: 0
+--- !u!95 &7428985661798890327
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663550949303208924}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b647ce11e119874c916258f82aa3a44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

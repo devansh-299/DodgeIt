@@ -13,6 +13,10 @@ public class Player : MonoBehaviour {
 
 	public Text healthDisplay;
 
+	double gameScore;
+
+	public Text playerScore;
+
 	public GameObject gameOverPanel;
 
 	AudioSource playerHurtSound;
@@ -42,6 +46,9 @@ public class Player : MonoBehaviour {
 
     void Update() {
 
+    	gameScore += 0.5 * Time.deltaTime;
+    	int intScore = (int)((float)gameScore);
+    	playerScore.text = intScore.ToString();
     	// used to set animator parameter to true/false based on input value
     	if (input != 0) {
     		anim.SetBool("isRunning", true);
@@ -103,8 +110,17 @@ public class Player : MonoBehaviour {
     		// gameObject refers to the object with this script
     		Destroy(gameObject);
 
+    		// destroying the spawnner
+    		Spawnner spawnnerScript = GameObject.FindGameObjectWithTag("Spawnner")
+        	.GetComponent<Spawnner>();
+        	spawnnerScript.destroySpawnner();
+
+        	// for setting health value to zero
+        	healthDisplay.text = "0";
+
     		// for game over screen
     		gameOverPanel.SetActive(true);
+
 
     	} 
 

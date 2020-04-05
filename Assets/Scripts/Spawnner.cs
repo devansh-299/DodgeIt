@@ -16,9 +16,18 @@ public class Spawnner : MonoBehaviour {
 	// time b/w start spawning
 	public float startTimeBtwSpawns;
 
+	//for acceleration of enemy
+	public float acceleration;
+
+	//total acceleration value
+	float addedSpeed;
+
     // spawning needs to be done multiple times
     // thus inside the update function
     void Update() {
+
+    	// for increasing the speed
+    	addedSpeed += acceleration * Time.deltaTime;
 
     	if (timeBtwSpawns <= 0) {
     		// enemy will be spawned
@@ -48,6 +57,15 @@ public class Spawnner : MonoBehaviour {
 
     	}
         
+    }
+
+    // returns the added speed value
+    public float getAddedSpeed() {
+    	return addedSpeed;
+    }
+
+    public void destroySpawnner() {
+    	Destroy(gameObject);
     }
 
 }
